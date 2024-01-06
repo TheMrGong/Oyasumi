@@ -694,7 +694,23 @@
             "CONTROLLERS": "Turned off multiple controllers",
             "TRACKER": "Turned off a tracker",
             "TRACKERS": "Turned off multiple trackers",
-            "VARIOUS": "Turned off various devices"
+            "VARIOUS": "Turned off various devices",
+            "HANDPRIMARY": "Turned off your Primary Controller",
+            "HANDSECONARY": "Turned off your Secondary Controller",
+            "FOOTLEFT": "Turned off the Left Foot tracker",
+            "FOOTRIGHT": "Turned off the Right Foot tracker",
+            "SHOULDERLEFT": "Turned off the Left Shoulder tracker",
+            "SHOULDERRIGHT": "Turned off the Right Shoulder tracker",
+            "ELBOWLEFT": "Turned off the Left Elbow tracker",
+            "ELBOWRIGHT": "Turned off the Right Elbow tracker",
+            "KNEELEFT": "Turned off the Left Knee tracker",
+            "KNEERIGHT": "Turned off the Right Knee tracker",
+            "WRISTLEFT": "Turned off the Left Wrist tracker",
+            "WRISTRIGHT": "Turned off the Right Wrist tracker",
+            "ANKLELEFT": "Turned off the Left Ankle tracker",
+            "ANKLERIGHT": "Turned off the Right Ankle tracker",
+            "WAIST": "Turned off the Waist tracker", 
+            "CHEST": "Turned off the Chest tracker"
           }
         },
         "unmutedAudioDevice": {

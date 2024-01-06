@@ -17,6 +17,7 @@ import { LighthouseService } from '../lighthouse.service';
 import { EventLogService } from '../event-log.service';
 import { AppSettingsService } from '../app-settings.service';
 import { VRCMuteSelfParamOscMethod } from './methods/vrc-mute-self-param.osc-method';
+import { RoleCommandOscMethod } from './methods/role-command.osc-method';
 
 @Injectable({
   providedIn: 'root',
@@ -52,6 +53,13 @@ export class OscControlService {
           eventLog,
           appSettings
         ),
+        new RoleCommandOscMethod(
+          osc,
+          this,
+          openvr,
+          lighthouseConsole,
+          eventLog
+        )
       ]
     );
     for (const method of this.methods) {
@@ -80,7 +88,7 @@ export class OscControlService {
         vrcParam = true;
       }
       if (vrcParam && !method.options.isVRCAvatarParameter) continue;
-      if (![method.options.address, ...method.options.addressAliases].includes(address)) continue;
+      if (![method.options.address, ...method.options.addressAliases].some((val) => address.startsWith(val))) continue;
       if (!this.messageValuesValidForMethod(message.values, method)) continue;
       await method.handleOSCMessage(message);
       return;

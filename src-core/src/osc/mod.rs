@@ -69,7 +69,7 @@ async fn spawn_receiver_task() -> CancellationToken {
                                 // check if address is whitelisted
                                 let address_whitelist_guard =
                                     OSC_RECEIVE_ADDRESS_WHITELIST.lock().await;
-                                if address_whitelist_guard.contains(&msg.addr) {
+                                if address_whitelist_guard.iter().any(|addr| msg.addr.starts_with(addr)) {
                                     send_event(
                                         "OSC_MESSAGE",
                                         OSCMessage {
